@@ -4,14 +4,12 @@ services:
   auth:
     build: ./auth-service
     container_name: auth-service
-    ports:
-      - "3001:3000"
+  
 
   profile:
     build: ./profile-service
     container_name: profile-service
-    ports:
-      - "3002:3000"
+  
 
 
   nginx:
@@ -20,6 +18,6 @@ services:
     ports:
       - "80:80"  # Expose port 80 for web traffic
     depends_on:
-      - auth-service
-      - profile-service
+      - auth
+      - profile
       
