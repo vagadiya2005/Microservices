@@ -21,7 +21,7 @@ app.use(profileRoutes);
 // server starting...
 app.listen(port,()=>{
 
-    console.log(`app running on port number ${port}`);
+    console.log(`app running on port numbers ${port}`);
     
 
 })
