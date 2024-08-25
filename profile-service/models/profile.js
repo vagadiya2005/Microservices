@@ -10,7 +10,7 @@ const profileSchema = new mongoose.Schema({
         unique: true
     },
     age:{
-        type:Number
+        type:Number     
     },
     gender:{
         type:String
