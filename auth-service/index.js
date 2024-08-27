@@ -21,7 +21,7 @@ app.use(userRoutes);
 // server starting...
 app.listen(port,()=>{
 
-    console.log(`app running on port numberssss ${port}`);
+    console.log(`app running on port number ${port}`);
     
 
 })
