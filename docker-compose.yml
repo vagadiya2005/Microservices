@@ -5,7 +5,7 @@ services:
     build: ./auth-service
     container_name: auth-service
   
-
+   
   profile:
     build: ./profile-service
     container_name: profile-service
