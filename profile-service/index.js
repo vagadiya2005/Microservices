@@ -9,7 +9,7 @@ require('./database');
 const port = 3000;
 
 // middleware
-
+   
 const corsOptions = require('./middleware/corsMiddleware');
 app.use(cors(corsOptions));
 
