@@ -4,17 +4,13 @@ pipeline {
     stages {
         stage('Clone Repository and Run Docker Compose') {
             steps {
-                sshagent(['server']) {
+                sshagent(['server']) { // add private key in credential
                     sh '''
-                        ssh -o StrictHostKeyChecking=no ubuntu@13.201.120.102 "
+                        ssh -o StrictHostKeyChecking=no ubuntu@PUBLIC_IP_OF_SERVER "
                         
-                        cd /home/ubuntu && \
+                        cd /home/ubuntu/Microservices && \
                         
-                        rm -rf Microdervices || true && \
-                        
-                        git clone https://github.com/vagadiya2005/Microservices.git Microdervices && \
-                        
-                        cd Microdervices && \
+                        git pull https://github.com/vagadiya2005/Microservices.git && \
                         
                         docker-compose up -d --build
                         "
