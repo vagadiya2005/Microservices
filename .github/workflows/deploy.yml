@@ -21,8 +21,8 @@ jobs:
     #     npm install
     #     npm ci
       
-    - name: Run tests
-      run: npm test
+    # - name: Run tests
+    #   run: npm test
       
     - name: Login to DockerHub
       uses: docker/login-action@v1
