@@ -2,14 +2,14 @@ version: '3.8'
 
 services:
   auth:
-    build: ./auth-service
+    image: prince066/profile-service-img:latest
     container_name: auth-service
     env_file:
       - .env
 
 
   profile:
-    build: ./profile-service
+    image: prince066/auth-service-img:latest
     container_name: profile-service
     env_file:
       - .env
