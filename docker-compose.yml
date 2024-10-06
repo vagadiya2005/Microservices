@@ -17,7 +17,7 @@ services:
 
 
   nginx:
-    build: ./nginx
+    image: prince066/nginx-service-img:latest
     container_name: nginx
     ports:
       - "80:80"  # Expose port 80 for web traffic
