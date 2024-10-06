@@ -4,12 +4,16 @@ services:
   auth:
     build: ./auth-service
     container_name: auth-service
-  
-   
+    env_file:
+      - .env
+
+
   profile:
     build: ./profile-service
     container_name: profile-service
-  
+    env_file:
+      - .env
+
 
 
   nginx:
@@ -20,4 +24,3 @@ services:
     depends_on:
       - auth
       - profile
-      
