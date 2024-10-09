@@ -9,7 +9,7 @@ app.use(express.json());
 // DB connections
 
 require('./database');
-const port = 80;
+const port = 5000;
 
 // prometheuos client
 const register = new client.Registry();
