@@ -6,7 +6,7 @@ app.use(express.json());
 // DB connection 
 
 require('./database');
-const port = 3000;
+const port = 80;
 
 // middleware
 

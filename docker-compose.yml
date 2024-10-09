@@ -4,6 +4,8 @@ services:
   auth:
     build: ./auth-service
     container_name: auth-service
+    profiles: [auth]
+
   
 
   profile:
