@@ -2,24 +2,31 @@ version: '3.8'
 
 services:
   auth:
-    build: ./auth-service
+    image: prince066/profile-service-img:latest
     container_name: auth-service
+<<<<<<< HEAD
     profiles: [auth]
 
   
+=======
+    env_file:
+      - .env
+
+>>>>>>> 3e192589c61919e84b11ab5d5b8187952283ba21
 
   profile:
-    build: ./profile-service
+    image: prince066/auth-service-img:latest
     container_name: profile-service
-  
+    env_file:
+      - .env
+
 
 
   nginx:
-    build: ./nginx
+    image: prince066/nginx-service-img:latest
     container_name: nginx
     ports:
       - "80:80"  # Expose port 80 for web traffic
     depends_on:
       - auth
       - profile
-      
