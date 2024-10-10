@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   auth:
-    image: prince066/profile-service-img:latest
+    image: prince066/auth-service-img:latest
     container_name: auth-service
     env_file:
       - .env
@@ -10,7 +10,7 @@ services:
   
 
   profile:
-    image: prince066/auth-service-img:latest
+    image: prince066/profile-service-img:latest
     container_name: profile-service
     env_file:
       - .env
