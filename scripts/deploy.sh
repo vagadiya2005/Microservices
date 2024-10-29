@@ -15,7 +15,7 @@ echo "Pulling code from remote repository..."
 # fi
 
 cd ..
-git pull origni main
+git pull origin main
 
 
 # Docker login with --password-stdin to avoid non-TTY error
