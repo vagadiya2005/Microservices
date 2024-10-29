@@ -20,7 +20,7 @@ fi
 
 # Docker login
 echo "Logging into Docker Hub..."
-echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
 # Build, tag, and push Docker images for each service
 declare -A services=( ["auth-service"]="auth-service-img" ["profile-service"]="profile-service-img" ["nginx"]="nginx-service-img" )
