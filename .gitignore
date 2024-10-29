@@ -3,3 +3,4 @@ auth-service/.env
 profile-service/node_modules/
 profile-service/.env
 scripts/.env
+.env
