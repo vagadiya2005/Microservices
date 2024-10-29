@@ -5,14 +5,18 @@ source ../.env
 
 # Pull code from the remote repository
 echo "Pulling code from remote repository..."
-if [ -d "$PROJECT_DIR" ]; then
-  cd ..
-  # cd $PROJECT_DIR
-  git pull origin main
-else
-  git clone $REPO_URL
-  cd $PROJECT_DIR
-fi
+# if [ -d "$PROJECT_DIR" ]; then
+#   cd ..
+#   # cd $PROJECT_DIR
+#   git pull origin main
+# else
+#   git clone $REPO_URL
+#   cd $PROJECT_DIR
+# fi
+
+cd ..
+git pull origni main
+
 
 # Docker login with --password-stdin to avoid non-TTY error
 echo "Logging into Docker Hub..."
