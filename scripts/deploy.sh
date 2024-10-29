@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Load environment variables from .env file
-source .env
+source ../.env
 
 # Pull code from the remote repository
 echo "Pulling code from remote repository..."
