@@ -2,5 +2,5 @@ auth-service/node_modules/
 auth-service/.env
 profile-service/node_modules/
 profile-service/.env
-scripts/.env
+# scripts/.env
 .env
