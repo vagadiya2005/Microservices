@@ -45,7 +45,7 @@ wait
 
 # Deploy using docker-compose
 echo "Deploying with docker-compose..."
-cd ..
+
 docker-compose down || true
 docker-compose up -d --build
 
