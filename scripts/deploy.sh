@@ -6,19 +6,6 @@ source ../.env
 # Pull code from the remote repository
 echo "Pulling code from remote repository..."
 
-cd ../..
-
-if [ -d "$PROJECT_DIR" ]; then
- 
-  cd $PROJECT_DIR
-
-  git pull origin main
-else
-  git clone $REPO_URL
-  cd $PROJECT_DIR
-fi
-
-
 cd ..
 git pull origin main
 
