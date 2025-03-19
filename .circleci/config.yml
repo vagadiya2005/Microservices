@@ -1,37 +1,28 @@
-# This config was automatically generated from your source code
-# Stacks detected: cicd:jenkins:.,deps:node:profile-service
 version: 2.1
+
 orbs:
   node: circleci/node@5
+
 jobs:
-  test-node:
-    # Install node dependencies and run tests
-    executor: node/default
-    working_directory: ~/project/profile-service
+  build:
+    docker:
+      - image: circleci/node:latest
     steps:
-      - checkout:
-          path: ~/project
-      - node/install-packages:
-          pkg-manager: npm
+      - checkout
+      - setup_remote_docker:
+          version: 20.10.7
+      - run:
+          name: Build Docker image
+          command: |
+            cd auth-service
+            docker build -t my-node-app .
       - run:
           name: Run tests
-          command: echo \"No test specified in package.json\"
-  deploy:
-    # This is an example deploy job, not actually used by the workflow
-    docker:
-      - image: cimg/base:stable
-    steps:
-      # Replace this with steps to deploy to users
-      - run:
-          name: deploy
-          command: '#e.g. ./deploy.sh'
-      - run:
-          name: found jenkins config
-          command: ':'
+          command: |
+            docker run my-node-app npm test
+
 workflows:
+  version: 2
   build-and-test:
     jobs:
-      - test-node
-    # - deploy:
-    #     requires:
-    #       - test-node
+      - build
