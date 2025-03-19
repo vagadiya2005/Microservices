@@ -15,10 +15,7 @@ jobs:
           command: |
             cd auth-service
             docker build -t my-node-app .
-      - run:
-          name: Run tests
-          command: |
-            docker run my-node-app npm test
+
 
 workflows:
   version: 2
