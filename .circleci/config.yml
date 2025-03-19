@@ -9,6 +9,7 @@ jobs:
       - image: circleci/node:latest
     steps:
       - checkout
+      - setup_remote_docker
       - run:
           name: Build Docker image
           command: |
