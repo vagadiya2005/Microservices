@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  auth:
+  auth:    
     image: prince066/auth-service-img:latest
     container_name: auth-service
     env_file:
