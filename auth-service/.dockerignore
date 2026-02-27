@@ -1,0 +1,65 @@
+# ------------------------------------
+# Node dependencies (never copy local)
+# ------------------------------------
+node_modules
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# ------------------------------------
+# Environment & secrets
+# ------------------------------------
+.env
+.env.*
+!.env.example
+
+# ------------------------------------
+# Git & CI/CD
+# ------------------------------------
+.git
+.gitignore
+.github
+
+# ------------------------------------
+# Docker files (avoid recursive copy)
+# ------------------------------------
+Dockerfile
+docker-compose.yml
+docker-compose.*.yml
+
+# ------------------------------------
+# Logs & temporary files
+# ------------------------------------
+logs
+*.log
+*.tmp
+tmp
+temp
+
+# ------------------------------------
+# OS generated files
+# ------------------------------------
+.DS_Store
+Thumbs.db
+
+# ------------------------------------
+# IDE / Editor
+# ------------------------------------
+.vscode
+.idea
+*.swp
+*.swo
+
+# ------------------------------------
+# Tests & coverage (optional in prod)
+# ------------------------------------
+coverage
+__tests__
+*.spec.js
+*.test.js
+
+# ------------------------------------
+# Documentation
+# ------------------------------------
+README.md
+docs

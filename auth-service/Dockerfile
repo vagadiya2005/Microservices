@@ -1,19 +1,33 @@
-# Use an official Node.js runtime as a parent image
-FROM node
+FROM node:20-alpine AS base
 
-# Set the working directory
+ENV NODE_ENV=production
+
 WORKDIR /app
 
-# Copy package.json and package-lock.json
+FROM base AS deps
+
+RUN apk add --no-cache libc6-compat
+
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install
+RUN npm ci --omit=dev && \
+    npm cache clean --force
 
-# Copy the rest of the application code
+FROM base AS runner
+
+RUN addgroup -S nodegroup && adduser -S nodeuser -G nodegroup
+
+COPY --from=deps /app/node_modules ./node_modules
+
 COPY . .
 
-# Expose the port the app runs on
+RUN chown -R nodeuser:nodegroup /app
+
+USER nodeuser
+
 EXPOSE 3000
-# Command to run the application
+
+HEALTHCHECK --interval=30s --timeout=3s --retries=3 \
+  CMD node -e "require('http').get('http://localhost:3000/health', res => { process.exit(res.statusCode === 200 ? 0 : 1) })"
+
 CMD ["node", "index.js"]
